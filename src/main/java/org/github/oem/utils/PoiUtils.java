@@ -11,7 +11,11 @@ public class PoiUtils {
 	
 	public static Object getCellValue(Cell cell,Class type){
 		if(type==String.class){
-			return cell.getRichStringCellValue().getString();
+			//如果单元格里是数值类型的String,转化一下单元格的type
+			if(cell != null){
+				cell.setCellType(Cell.CELL_TYPE_STRING);
+			}
+			return cell.getStringCellValue();
 		}else if(type==Integer.class){
 			Double value=new Double(cell.getNumericCellValue());
 			return new Integer(value.intValue());

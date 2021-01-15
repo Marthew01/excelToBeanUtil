@@ -3,5 +3,6 @@
         <class name="org.github.oem.pojo.User">
                 <property name="id" type="Integer" colIndex="0"></property>
                 <property name="name" type="String" colIndex="1"></property>
+                <property name="password" type="String" colIndex="3"></property>
         </class>
 </oem>

@@ -1,6 +1,7 @@
 package org.github.oem.utils;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
@@ -11,14 +12,16 @@ import org.github.oem.pojo.User;
 import org.junit.Test;
 
 public class ExcelToObjectTest {
-	
-	ExcelToObjectByPoi reader=new ExcelToObjectByPoi(ExcelToObjectTest.class.getResource("/"));  
+
+	//获取xml文件
+	ExcelToObjectByPoi xml=new ExcelToObjectByPoi(ExcelToObjectTest.class.getResource("/"));
 
 	@Test
 	public void testReadExcel() throws InvalidFormatException, IOException {
-		File excelFile = new File(ExcelToObjectTest.class.getResource("/test_2011.xlsx").getFile());
+
+		File excelFile = new File("D:\\aaa.xlsx");
 		Workbook workbook = WorkbookFactory.create(excelFile);
-		List<User> users = reader.readSheet(workbook.getSheetAt(0), User.class);
+		List<User> users = xml.readSheet(workbook.getSheetAt(0), User.class);
 		System.out.println(users);
 	}
 
