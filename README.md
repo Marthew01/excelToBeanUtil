@@ -7,7 +7,8 @@ This is a tool for excel mapping to pojo
 
 使用说明(现在支持excel 2007+):
 	
-	ExcelToObjectByPoi reader=new ExcelToObjectByPoi(ExcelToObjectTest.class.getResource("/"));  
+	//获取xml文件
+	ExcelToObjectByPoi xml=new ExcelToObjectByPoi(ExcelToObjectTest.class.getResource("/"));
 
 	@Test
 	public void testReadExcel() throws InvalidFormatException, IOException {
